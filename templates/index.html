@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code Snippet Generator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- TOP NAV -->
+<header class="navbar">
+    <div class="nav-left">
+        <span class="logo">⚡ CodeSnippet</span>
+    </div>
+
+    <div class="nav-center">
+        AI Code Generator
+    </div>
+
+    <div class="nav-right">
+        <i class="fa-solid fa-moon nav-icon"></i>
+        <i class="fa-solid fa-gear nav-icon"></i>
+        <i class="fa-solid fa-user nav-icon"></i>
+    </div>
+</header>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h3>History</h3>
+        <ul id="history-list">
+            <li class="hint">Your prompts appear here</li>
+        </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+        <h1>Generate Code</h1>
+
+        <textarea id="prompt" placeholder="Describe the code you want..."></textarea>
+
+        <button class="generate-btn" onclick="generateCode()">
+            <i class="fa-solid fa-bolt"></i> Generate
+        </button>
+
+        <div class="output-wrapper">
+            <button class="copy-btn" onclick="copyCode()" title="Copy code">
+                <i class="fa-regular fa-copy"></i>
+            </button>
+            <pre id="output">Your generated code will appear here...</pre>
+        </div>
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
